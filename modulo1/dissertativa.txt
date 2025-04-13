@@ -1,0 +1,8 @@
+Exercício 2
+
+c) programação orientada a objetos.
+
+A POO é a melhor opção pois modelaria as entidades do sistema (livro, autor) com seus métodos e propriedades específicas. Além disso, a POO facilita a reutilização de código através da herança, assim, seria possível a criação de subclasses para os arquivos da biblioteca que herdam métodos e comportamentos de classes já existentes, mas que ainda assim podem ter regras de comportamneto diferentes. 
+O polimorfismo também seria útil, permitindo tratar diferentes tipos de itens da mesma forma quando necessário, mesmo que cada um tenha suas particularidades. Isso deixaria o código mais limpo.
+Quanto à manutenção e evolução do sistema, a POO facilita bastante, pois novos tipos de itens ou regras podem ser adicionados criando novas classes, sem precisar modificar muito o código existente.
+
