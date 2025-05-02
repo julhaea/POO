@@ -1,0 +1,47 @@
+package com.mycompany.app;
+
+import com.mycompany.app.Model.Artigo;
+import com.mycompany.app.Model.Autor;
+import com.mycompany.app.Model.Emprestimo;
+import com.mycompany.app.Model.Livro;
+import com.mycompany.app.Model.Usuario;
+
+public class Main {
+    public static void main (String[] args) {
+        Autor autor = new Autor ("Jessica Felix", 36, "Brasileira", true);
+        Livro livro = new Livro("Java for Begginers", autor, "Tecnologia");
+        Usuario usuario =  new Usuario ("Lucas Rafael", 25);
+        Artigo artigo = new Artigo ("Entendendo Compiladores", new Autor (usuario.getNome(), usuario.getIdade(), "Brasileiro", false), "Tecnologia", true);
+
+
+        livro.emprestar(usuario);
+
+        livro.devolver();
+
+        if (livro.getDisponivel()) {
+            System.out.println("O livro nao esta disponivel");
+            System.out.println("Livro: " + livro.getTitulo());
+            System.out.println("Autor: " + livro.getAutor().getNome());
+            System.out.println("Genero: " + livro.getGenero());
+            
+            Emprestimo emp = usuario.getHistoricoEmprestimos().get(0);
+            
+            System.out.println("Usuario: " + emp.getUsuario().getNome());
+            System.out.println("Idade: " + emp.getUsuario().getIdade());
+            
+            System.out.println("Data de Retirada: " + emp.getDataRetirada());
+            System.out.println("Data de Devolucao: " + emp.getDataDevolucao());
+        }
+
+        if (artigo.isPublicado()){
+            
+            System.out.println("O Artigo está publicado");
+            System.out.println("Artigo: " + artigo.getTitulo());
+            System.out.println("Autor: " + artigo.getAutor().getNome());
+            System.out.println("Genero: " + artigo.getGenero());
+        }
+
+    
+    }
+}
+    
